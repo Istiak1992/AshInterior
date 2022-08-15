@@ -2,22 +2,17 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
 
-const productSchema = new mongoose.Schema({
-    title: {
+const teamSchema = new mongoose.Schema({
+    name: {
         type: String,
     },
-    description: {
+    designation: {
         type: String,
     },
-    image: {
+    photo: {
         type: String,
     },
 
-    status: {
-        type: Boolean,
-        default: true,
-        required: false
-    },
     createdAt: {
         type: Date,
         default: Date.now,
@@ -25,4 +20,4 @@ const productSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("Product", productSchema);
+module.exports = mongoose.model("Team", teamSchema);
